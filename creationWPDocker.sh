@@ -13,7 +13,7 @@ docker run -d -p 4000:80 apache
 # récupération de l'id de apache
 apacheId=docker ps --filter "name=apache" -q
 
-apt-get install mysql-server
+apt-get -y install mysql-server
 docker exec -it ${apacheId} bash
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=0000 -d mysql:latest
 
